@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table {
+            border-top: 1px solid #aaa;
+            border-left: 1px solid #aaa;
+        }
+
+        td {
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+        }
+    </style>
+    <title>九九乘法表</title>
+</head>
+
+<body>
+    <table cellpadding=0; cellspaing=0; border=0; width=100%;>
+        <script>
+            const ROW = 5;
+            const START = 1;
+            const COL = 5;
+
+            for (let k = 0; k < ROW; k++) {
+                document.write("<tr>");
+                for (let j = START; j < (START + COL); j++) {
+                    let newj = j + k * COL;
+                    let isPink;
+                    if (COL % 2 == 0) {
+                        isPink = (newj = k) % 2 == 0;
+                    } else {
+                        isPink = newj % 2 == 0;
+                    }
+                    document.write("<td bgcolor='" + (isPink ? "pink" : "yellow") + "'>");
+                    for (let i = 1; i <= 9; i++) {
+                        let r = newj * i;
+                        document.write(`${newj} X ${i} = ${r}<br>`);
+                    }
+                    document.write("</td>");
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+
+</body>
+
+</html>

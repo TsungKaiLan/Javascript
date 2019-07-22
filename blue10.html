@@ -1,8 +1,8 @@
 <script>
-    let a = '1', b = '3';
-    if (a > b) {
-        document.write("OK");
+    let a = 10, b = 3;
+    if (--a >= 10 || ++b <= 3) {
+        document.write(`OK a=${a}; b=${b}`);
     } else {
-        document.write("xx")
+        document.write(`XX: a=${a}; b=${b}`);
     }
 </script>
