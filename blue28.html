@@ -1,0 +1,17 @@
+<script src="BlueTools.js"></script>
+
+<script>
+    function checkID() {
+        let msg = document.getElementById('msg');
+        let id = document.getElementById('id').value;
+        msg.innerHTML = checkTWID(id) ? '' : 'ID Error!';
+
+    }
+</script>
+
+<form>
+    Name: <input type="text" /><br><br>
+    ID: <input type="text" onblur="checkID()" id="id" /><span id="msg"></span><br>
+    Gender: <input type="radio" name="gender" checked />Male
+    <input type="radio" name="gender" />Female
+</form>

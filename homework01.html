@@ -1,0 +1,30 @@
+<script>
+    for (let i = 2; i <= 100; i++) {
+        let flag = true;
+        for (let j = 2; j < i; j++) {
+            if (i % j == 0) {
+                flag = false;
+            }
+        }
+        if (flag) {
+            document.write(i + "<br>");
+        }
+    }
+</script>
+
+<table border="1" style="border-collapse: collapse; text-align:center;" width=" 100%">
+    <script>
+        const ROW = 5;
+        const START = 1;
+        const COL = 5;
+
+        for (let k = 0; k < ROW; k++) {
+            document.write("<tr>");
+            for (let j = START; j < (START + COL); j++) {
+                document.write(j + "<td>");
+            }
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    </script>
+</table>
