@@ -1,0 +1,29 @@
+<script>
+    let a = 1;
+    while (a < 10) {
+        document.write(a++ + "<br>");
+    }
+    document.write("<hr>");
+
+    for (let a = 0; a < 9; a++) {
+        document.write(a + 1 + "<br>");
+    }
+
+    let i = parseInt(Math.random() * 10);
+    for (let j = 0; j < i; j++) {
+        document.write(j + "<br>");
+    }
+
+    function sum() {
+        let n = parseInt(document.getElementById("n").value);
+        let i = 1, sum = 0;
+        while (i <= n) sum += i++;
+        document.getElementById('result').innerHTML = sum;
+    }
+</script>
+
+
+1+2+....+
+<input id="n" type="number">
+<input type="button" value="=" onclick="sum()">
+<span id="result"></span>
