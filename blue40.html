@@ -1,0 +1,56 @@
+<h1 id="header"></h1>
+<hr>
+
+<canvas id="canvas" width="480" height="320" style="border:1px solid #ccc;"></canvas>
+<input type="button" value="Clear" onclick="clearCanvas()">
+<input type="button" value="MoveLeft" onclick="moveLeft()">
+<input type="button" value="MoveReft" onclick="moveRight()">
+<script>
+    header.innerHTML = "C.Y. Big Company";
+    let ctx = canvas.getContext('2d'); //渲染
+    let isDrag = false;
+
+    ctx.strokeStyle = 'rgb(0,0,255)'; //筆刷顏色
+    ctx.beginPath(); //開始畫
+    ctx.moveTo(2, 2); //移動至10,10位置
+    ctx.lineTo(2, 102); //畫線100,100
+    ctx.stroke(); //結束
+
+    canvas.onmousedown = function (e) {
+        isDrag = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+    }
+    canvas.onmouseup = function () {
+        isDrag = false;
+    }
+    canvas.onmousemove = function (e) {
+        if (!isDrag) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        // console.log('drag' + e.offsetX + "x" + e.offsetY);
+    }
+
+    let ball = new Image();
+    let ballX = 200;
+    ball.src = 'ball.png';
+    ball.onload = function () {
+        ctx.drawImage(ball, ballX, 100);
+    }
+
+    function moveLeft() {
+        ballX -= 10;
+        clearCanvas();
+        ctx.drawImage(ball, ballX, 100);
+    }
+    function moveRight() {
+        ballX += 10;
+        clearCanvas();
+        ctx.drawImage(ball, ballX, 100);
+    }
+
+    function clearCanvas() {
+        ctx.clearRect(0, 0, 480, 320);
+    }
+
+</script>
