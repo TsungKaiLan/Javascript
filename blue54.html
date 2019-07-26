@@ -1,0 +1,48 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<head>
+    <style>
+        a {
+            text-decoration: none;
+            color: #ff0000;
+        }
+
+        input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<h1 id="test1">C.Y. Big Company</h1>
+<div id="container">
+    <h2>Hello, Blue!</h2>
+    <br>
+    <p>test</p>
+    <hr>
+    <ul style="list-style-type: none;margin-left: -30px;">
+        <li><a href="#">001</a></li>
+        <li><a href="#">002</a></li>
+        <li><a href="#">003</a></li>
+        <li><a href="#">004</a></li>
+    </ul>
+    <input id="test2" type="button" value="Click">
+</div>
+
+<script>
+    // $("div") => all all div element => getElementByTag("div")
+    // $("#id") => id = "id" => getElementById("id")
+    // $(".class") => class = "class" => getElementByClass("class")
+
+    $("#test2").click(function () {
+        let ps = $("p");
+        for (let p of ps) {
+            p.style.color = 'blue';
+            p.style.background = 'yellow';
+        }
+        $obj = $(document.getElementById("container"));
+        $obj.css({ "color": "pink" });
+    });
+    $("li a").click(function () {
+        $(this).css({ "color": "blue" });
+    });
+</script>
