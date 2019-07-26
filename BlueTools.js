@@ -1,3 +1,4 @@
+//九九乘法驗證
 function checkTWID(id) {
     let ret = false;
     let regex = /^[a-zA-Z][12][0-9]{8}$/;
@@ -23,6 +24,7 @@ function checkTWID(id) {
     return ret;
 }
 
+//電話驗證
 function checkTEL(tel) {
     let ret = false;
     let regex = /^[0][9][0-9]{2}-[0-9]{6}$/;
@@ -33,6 +35,7 @@ function checkTEL(tel) {
     return ret;
 }
 
+//猜數字
 function createAnswer(n = 3) {
     let poker = [];
     for (let i = 0; i < 10; i++) poker[i] = i;
@@ -56,4 +59,32 @@ function checkAB(ans, gus) {
         }
     }
     return `${a}A${b}B`;
+}
+
+
+//CLONE
+function clone(source) {
+    if (source == null || typeof (source) != 'object') return null;
+
+    let target = new Object();
+    for (let attr in source) {
+        if (typeof (source[attr]) != 'object') {
+            target[attr] = source[attr];
+        } else {
+            target[attr] = clone(source[attr]);
+        }
+    }
+
+    return target;
+}
+
+//時間日期
+Date.prototype.getTWYear = function () {
+    return this.getFullYear() - 1911; //民國
+}
+
+Date.prototype.getCWeek = function () {
+    let w = this.getDay();
+    let ws = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    return ws[w];
 }

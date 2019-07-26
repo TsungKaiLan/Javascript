@@ -1,0 +1,35 @@
+<script src="BlueTools.js"></script>
+<script>
+    let person = {
+        name: 'Blue',
+        age: 18,
+        weight: 100,
+        bike: [{
+            brand: 'Giant',
+            speed: 10
+        }, {
+            brand: 'uBike',
+            speed: 20
+        }],
+        eat: function () {
+            document.write(this.name + ":eating...");
+        }
+    }
+
+    let strJSON = JSON.stringify(person);
+    document.write(strJSON);
+    document.write("<hr>");
+
+    let person2 = JSON.parse(strJSON);
+    for (let key in person2) {
+        document.write(key + ":" + person2[key] + "<br>");
+    }
+    document.write("<hr>");
+
+    person.eat.call(person2);
+    document.write("<hr>");
+
+    let person3 = clone(person);
+    person3.eat();
+
+</script>

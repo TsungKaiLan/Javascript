@@ -1,0 +1,14 @@
+<script src="BlueTools.js"></script>
+<script>
+    setInterval(() => {
+        let clock = new Date();
+        let clockString = clock.getTWYear() + "-" +
+            (clock.getMonth() + 1) + "-" +
+            clock.getDate() +
+            clock.getCWeek();
+        now.innerHTML = clockString;
+        // console.log(parseInt(Math.random()*100));
+    }, 1 * 500);
+</script>
+目前日期時間:
+<span id="now"></span>

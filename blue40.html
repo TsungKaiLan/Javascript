@@ -16,7 +16,7 @@
     ctx.lineTo(2, 102); //畫線100,100
     ctx.stroke(); //結束
 
-    canvas.onmousedown = function (e) {
+    canvas.onmousedown = function (e) { //e = event 事件被接收
         isDrag = true;
         ctx.beginPath();
         ctx.moveTo(e.offsetX, e.offsetY);
